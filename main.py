@@ -46,10 +46,7 @@ if element.is_displayed():
         time.sleep(8)
         current_url = driver.current_url
         print(current_url)
-
-    
-    
-
+  
 else:
     print("Login page not loaded")
 
