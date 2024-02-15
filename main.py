@@ -35,7 +35,7 @@ if element.is_displayed():
     time.sleep(10)
     verify = driver.page_source
     print("Sarada")
-    print(verify)
+    #print(verify)
     current_url = driver.current_url
     print(current_url)
     os.environ['API_KEY'] = current_url
