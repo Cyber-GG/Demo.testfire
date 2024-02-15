@@ -37,7 +37,7 @@ if element.is_displayed():
     print(verify)
     current_url = driver.current_url
     print(current_url)
-    os.environ['URL'] = current_url
+    print(f"::set-output name=current_url::{current_url}")
      
 else:
     print("Login page not loaded")
