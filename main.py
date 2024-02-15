@@ -3,6 +3,7 @@ import pyotp
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
 import time
+import os
 
 
 firefox_options = Options()
@@ -37,8 +38,8 @@ if element.is_displayed():
     print(verify)
     current_url = driver.current_url
     print(current_url)
-    print(f"::set-output name=current_url::{current_url}")
-     
+    os.environ['API_KEY'] = current_url
+ 
 else:
     print("Login page not loaded")
 
