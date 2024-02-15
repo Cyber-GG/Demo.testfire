@@ -39,6 +39,7 @@ if element.is_displayed():
         otpinput = driver.find_element(By.ID, "tc")
         totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
         print(totp.now())
+        print("Hello")
         otpinput.send_keys(totp)
         verifybtn = driver.find_element(By.ID, "save")
         verifybtn.click()
