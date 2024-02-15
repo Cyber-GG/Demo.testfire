@@ -40,7 +40,7 @@ if element.is_displayed():
     print(current_url)
     env_file = os.environ(current_url)
     with open(env_file, "a") as myfile:
-    myfile.write("MY_VAR=MY_VALUE")
+       myfile.write("MY_VAR=MY_VALUE")
     print(MY_VAR)
  
 else:
