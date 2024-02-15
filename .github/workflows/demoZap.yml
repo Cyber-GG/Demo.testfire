@@ -1,0 +1,37 @@
+name: Zap MFA
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  zap-scan:
+    runs-on: ubuntu-latest
+
+    env:
+      ZAP_USERNAME: ${{ secrets.ZAP_USERNAME }}
+      ZAP_PASSWORD: ${{ secrets.ZAP_PASSWORD }}
+      LOGIN_URL: "http://demo.testfire.net/login.jsp"  # Replace with your actual login URL
+      #MFA_URL: "https://example.com/mfa"      # Replace with your MFA verification URL
+      #MFA_OTP: ${{ secrets.MFA_OTP }}         # Replace with your actual MFA OTP
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Environment Variables
+        run: |
+          echo "export ZAP_USERNAME=$ZAP_USERNAME" >> $GITHUB_ENV
+          echo "export ZAP_PASSWORD=$ZAP_PASSWORD" >> $GITHUB_ENV
+
+      - name: Run Zap Scan
+        run: |
+               docker run --rm -v $(pwd):/zap/wrk/:z -t ictu/zap2docker-weekly zap-full-scan.py -I -j \
+               -t https://demo.testfire.net/ --hook=/zap/auth_hook.py \
+               -z "auth.loginurl=http://demo.testfire.net/login.jsp \
+                auth.username=admin \
+                auth.password=admin \
+                auth.username_field=uid \
+                auth.password_field=passw \
+                auth.submit_field=btnSubmit" * OUTOFSCOPE .*\.js
