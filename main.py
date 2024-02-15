@@ -38,7 +38,10 @@ if element.is_displayed():
     #print(verify)
     current_url = driver.current_url
     print(current_url)
-    os.environ['API_KEY'] = current_url
+    env_file = os.environ(current_url)
+    with open(env_file, "a") as myfile:
+    myfile.write("MY_VAR=MY_VALUE")
+    print(MY_VAR)
  
 else:
     print("Login page not loaded")
