@@ -38,4 +38,5 @@ jobs:
           pip install selenium
           pip install pyotp==2.0.1
           python ./main.py
-          echo "URL:$current_url"
+          id: set_api_key
+          echo "URL: ${{ steps.set_api_key.outputs.current_url }}"
