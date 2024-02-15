@@ -47,7 +47,9 @@ if element.is_displayed():
         otpinput.send_keys(totp)
         verifybtn = driver.find_element(By.ID, "save")
         verifybtn.click()
+        print("Natasha")
         time.sleep(8)
+        print("Priya")
         current_url = driver.current_url
         print(current_url)
 
