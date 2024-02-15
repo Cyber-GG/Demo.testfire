@@ -37,5 +37,5 @@ on:
         run: |
           pip install selenium
           pip install pyotp==2.0.1
-          python ./main.py       
-          echo "URL:${API_KEY}"
+          python ./main.py      
+        
