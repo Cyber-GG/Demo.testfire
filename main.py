@@ -35,29 +35,9 @@ if element.is_displayed():
     verify = driver.page_source
     print("Sarada")
     print(verify)
-    if "Verify Your Identity" in verify:
-        print("Now in OTP Page")
-        print("Sandy")
-        print(verify)
-        otpinput = driver.find_element(By.ID, "tc")
-        print("Mukesh")
-        totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
-        print(totp.now())
-        print("Kaddy")
-        otpinput.send_keys(totp)
-        verifybtn = driver.find_element(By.ID, "save")
-        verifybtn.click()
-        print("Natasha")
-        time.sleep(8)
-        print("Priya")
-        current_url = driver.current_url
-        print(current_url)
-
-    else: 
-     print("Some other page")
-     print(verify)
-     current_url = driver.current_url
-     print(current_url)
+    current_url = driver.current_url
+    print(current_url)
+    
      
 else:
     print("Login page not loaded")
