@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-
+jobs:
   zap-scan:
     runs-on: ubuntu-latest
 
