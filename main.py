@@ -33,12 +33,16 @@ if element.is_displayed():
     loginbutton.click()
     time.sleep(10)
     verify = driver.page_source
+    print("Hi")
+    print(verify)
     if "Verify Your Identity" in verify:
         print("Now in OTP Page")
         print(verify)
+        print("Hey")
         otpinput = driver.find_element(By.ID, "tc")
         totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
         print(totp.now())
+        print("Hello")
         otpinput.send_keys(totp)
         verifybtn = driver.find_element(By.ID, "save")
         verifybtn.click()
