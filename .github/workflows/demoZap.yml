@@ -38,6 +38,6 @@ jobs:
           pip install selenium
           pip install pyotp==2.0.1
           python ./main.py
-          URL=$(python Url.py)
+          URL=$(python ./main.py)
           echo "$URL"
         
