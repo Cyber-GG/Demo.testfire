@@ -39,5 +39,5 @@ jobs:
           pip install pyotp==2.0.1
           python ./main.py
           url=$(python Url.py)
-          echo $url
+          
         
