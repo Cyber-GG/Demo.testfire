@@ -24,7 +24,7 @@ driver.get('https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/')
 #element=driver.find_element(By.XPATH, "/html/body/div[1]/div[1]/div/div/div[2]/div[3]/form/div[1]/div/input[1]")
 
 # Check if the element is visible
-if element.is_displayed():
+#if element.is_displayed():
     usernameid=driver.find_element(By.ID, "username")
     passwordid=driver.find_element(By.ID, "password")
     usernameid.send_keys(username)
