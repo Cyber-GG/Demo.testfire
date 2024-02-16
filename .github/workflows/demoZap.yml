@@ -37,9 +37,6 @@ jobs:
         run: |
           pip install selenium
           pip install pyotp==2.0.1
-          python ./main.py
-          URL=$(python ./main.py)
-          echo "$URL"
-          docker run --rm -v $(pwd):/zap/wrk/:z -t ictu/zap2docker-weekly zap-baseline.py -I -j -t https://saint-gobain-uk--perftestin.sandbox.lightning.force.com/lightning/r/Case/5008d00000X5IkOAAV/view
+          python ./main.py   
           
         
