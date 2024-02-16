@@ -1,3 +1,4 @@
 import main
 
-print(main.current_url) 
+url=main.current_url
+print(url) 
