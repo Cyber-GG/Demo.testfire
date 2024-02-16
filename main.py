@@ -25,17 +25,17 @@ driver.get('https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/')
 
 # Check if the element is visible
 #if element.is_displayed():
-    usernameid=driver.find_element(By.ID, "username")
-    passwordid=driver.find_element(By.ID, "password")
-    usernameid.send_keys(username)
-    passwordid.send_keys(password)
-    loginbutton = driver.find_element(By.ID, "Login")
-    loginbutton.click()
-    time.sleep(10)
-    verify = driver.page_source
-    #print(verify)
-    current_url = driver.current_url
-    print(current_url)
+usernameid=driver.find_element(By.ID, "username")
+passwordid=driver.find_element(By.ID, "password")
+usernameid.send_keys(username)
+passwordid.send_keys(password)
+loginbutton = driver.find_element(By.ID, "Login")
+loginbutton.click()
+time.sleep(10)
+verify = driver.page_source
+#print(verify)
+current_url = driver.current_url
+print(current_url)
  
 else:
     print("Login page not loaded")
