@@ -26,10 +26,10 @@ print(current_url)
 
 # Check if the element is visible
 #if element.is_displayed():
-usernameid=driver.find_element(By.ID, "username")
-passwordid=driver.find_element(By.ID, "password")
-usernameid.send_keys(username)
-passwordid.send_keys(password)
+usernameid=driver.find_element(By.ID, "un")
+passwordid=driver.find_element(By.ID, "pw")
+usernameid.send_keys(un)
+passwordid.send_keys(pw)
 loginbutton = driver.find_element(By.ID, "Login")
 loginbutton.click()
 current_url = driver.current_url
