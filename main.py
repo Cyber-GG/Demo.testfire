@@ -18,8 +18,8 @@ password = "Password@3101"
 driver = webdriver.Firefox(options = firefox_options)
 driver.get('https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/')
 
-totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
-totp.now()
+#totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
+#totp.now()
 
 element=driver.find_element(By.XPATH, "/html/body/div[1]/div[1]/div/div/div[2]/div[3]/form/div[1]/div/input[1]")
 
