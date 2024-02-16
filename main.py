@@ -36,7 +36,3 @@ verify = driver.page_source
 #print(verify)
 current_url = driver.current_url
 print(current_url)
- 
-else:
-    print("Login page not loaded")
-
