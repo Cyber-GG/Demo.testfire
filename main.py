@@ -19,13 +19,12 @@ driver = webdriver.Firefox(options = firefox_options)
 driver.get('https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/')
 
 totp = pyotp.TOTP('XXUUNAVCYKI3UGHPCWUMVCUHZSYOLMTL')
-print(totp.now())
+totp.now()
 
 element=driver.find_element(By.XPATH, "/html/body/div[1]/div[1]/div/div/div[2]/div[3]/form/div[1]/div/input[1]")
 
 # Check if the element is visible
 if element.is_displayed():
-    print("Login Page visible")
     usernameid=driver.find_element(By.ID, "username")
     passwordid=driver.find_element(By.ID, "password")
     usernameid.send_keys(username)
@@ -34,7 +33,6 @@ if element.is_displayed():
     loginbutton.click()
     time.sleep(10)
     verify = driver.page_source
-    print("Sarada")
     #print(verify)
     current_url = driver.current_url
     print(current_url)
