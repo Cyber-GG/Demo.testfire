@@ -40,4 +40,6 @@ jobs:
           python ./main.py
           URL=$(python ./main.py)
           echo "$URL"
+          docker run --rm -v $(pwd):/zap/wrk/:z -t ictu/zap2docker-weekly zap-baseline.py -I -j -t $url
+          
         
