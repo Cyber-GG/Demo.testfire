@@ -37,6 +37,7 @@ jobs:
         run: |
           pip install selenium
           pip install pyotp==2.0.1
-          Current_URL=$(python ./main.py)
-          echo "$Current_URL"
+          python ./main.py
+          url=$(python ./url.py)
+          echo $url
         
