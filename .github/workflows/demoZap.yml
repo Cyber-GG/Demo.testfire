@@ -26,7 +26,7 @@ jobs:
           python ./main.py   
 
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.9.0
+        uses: zaproxy/action-baseline@v0.11.0
         with:
           docker_name: 'ictu/zap2docker-weekly'
           target: 'https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/'
@@ -38,5 +38,4 @@ jobs:
             auth.password=${{secrets.PASSWORD}}
             auth.username_field=username
             auth.password_field=password 
-            auth.submit_field=Login" * OUTOFSCOPE .*\.js 
-        
+            auth.submit_field=Login" * OUTOFSCOPE .*\.js       
