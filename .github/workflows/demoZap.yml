@@ -27,4 +27,5 @@ jobs:
 
       - name: Run Zap Scan
         run: |
-         docker run --rm -v $(pwd):/zap/wrk/:z -t owasp/zap2docker-weekly zap-api-scan.py -t https://sguk-test-c3p-orders-imp-v1.de-c1.eu1.cloudhub.io/api/v1/orders -f openapi 
+         docker run -t owasp/zap2docker-weekly zap-api-scan.py -t \
+         https://sguk-test-c3p-orchestration-imp-v1.de-c1.eu1.cloudhub.io/api/v1/accounts -f openapi 
