@@ -25,17 +25,6 @@ jobs:
           pip install pyotp==2.0.1
           python ./main.py   
 
-      - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.11.0
-        with:
-          docker_name: 'ictu/zap2docker-weekly'
-          target: 'https://saint-gobain-uk--perftestin.sandbox.my.salesforce.com/'
-          #rules_file_name: '.zap/rules.tsv'
-          cmd_options: >
-            --hook=/zap/auth_hook.py 
-            -z "auth.loginurl=${{secrets.Login_URL}}
-            auth.username=${{secrets.USERNAME}}
-            auth.password=${{secrets.PASSWORD}}
-            auth.username_field=username
-            auth.password_field=password 
-            auth.submit_field=Login" * OUTOFSCOPE .*\.js       
+      - name: Run Zap Scan
+        run: |
+         docker run --rm -v $(pwd):/zap/wrk/:z -t owasp/zap2docker-weekly zap-api-scan.py -t https://sguk-test-c3p-orders-imp-v1.de-c1.eu1.cloudhub.io/api/v1/orders -f openapi 
